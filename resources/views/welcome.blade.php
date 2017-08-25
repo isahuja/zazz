@@ -17,12 +17,6 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#services">Services</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
           </ul>
         </div>
       </div>
@@ -68,15 +62,14 @@
               <!-- <i class="fa fa-desktop" aria-hidden="true"></i> -->
               <i class="fa fa-5x fa-desktop text-primary sr-icons"></i>
               <h3>Fix Desktop</h3><br>
-              <a class="btn btn-default  sr-button" href="http://startbootstrap.com/template-overviews/creative/" data-sr-id="6" style="; visibility: visible;  background:#ff0000; color:#fff;-webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: all 0.15s ease-in-out 0s, -webkit-transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s, opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s; transition: all 0.15s ease-in-out 0s, transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s, opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s; ">Click here</a>
+              <a class="btn btn-default  sr-button" href="{{ URL::to('/desktop') }}" data-sr-id="6" style="; visibility: visible;  background:#ff0000; color:#fff;-webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: all 0.15s ease-in-out 0s, -webkit-transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s, opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s; transition: all 0.15s ease-in-out 0s, transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s, opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s; ">Click here</a>
             </div>
           </div>
           <div class="col-lg-6 col-md-6 text-center">
             <div class="service-box">
               <i class="fa fa-5x fa-laptop text-primary sr-icons"></i>
               <h3>Fix Laptop</h3><br>
-              <!-- <p class="text-muted">You can use this theme as is, or you can make changes!</p> -->
-              <a class="btn btn-default  sr-button" href="http://startbootstrap.com/template-overviews/creative/" data-sr-id="6" style="; visibility: visible;  background:#ff0000; color:#fff;-webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: all 0.15s ease-in-out 0s, -webkit-transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s, opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s; transition: all 0.15s ease-in-out 0s, transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s, opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s; ">Click here</a>
+              <a class="btn btn-default  sr-button" href="{{ URL::to('/laptop') }}" data-sr-id="6" style="; visibility: visible;  background:#ff0000; color:#fff;-webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: all 0.15s ease-in-out 0s, -webkit-transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s, opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s; transition: all 0.15s ease-in-out 0s, transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s, opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s; ">Click here</a>
             </div>
           </div>
         </div>
