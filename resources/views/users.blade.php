@@ -11,7 +11,10 @@
 <center>
 {{ $users }}
 		<ul>
-			<li></li>
+		@for ($i = 0; $i < $users.length; $i++)
+			<li>{{$users.name}}</li>
+
+		@endfor
 		</ul>
 </center>
 @stop
