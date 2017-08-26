@@ -11,9 +11,9 @@
 <center>
 {{ $users }}
 		<ul>
-		@for ($i = 0; $i < $users; $i++)
-			<li>{{$users.name}}</li>
-		@endfor
+		@foreach($user as $users)
+			<li>{{$user->name}}</li>
+		@endforeach
 		</ul>
 </center>
 @stop
