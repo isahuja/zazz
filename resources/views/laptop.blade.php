@@ -49,6 +49,7 @@
 			success:function(data)
 			{
 				$('#question-insert-div').append(data);
+				
 			} 
 		});
 	});
