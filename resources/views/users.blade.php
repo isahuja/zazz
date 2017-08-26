@@ -1,7 +1,3 @@
-
-
-
-
 @extends('default')
 
 @section('content')
@@ -15,7 +11,7 @@
 <center>
 {{ $users }}
 		<ul>
-			<li>{{ $users.name }}</li>
+			<li></li>
 		</ul>
 </center>
 @stop
