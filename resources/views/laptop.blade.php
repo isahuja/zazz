@@ -1,15 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Desktop</title>
-	<script src="js/jquery.min.js"></script>
-</head>
-<body>
-	<center>
-			<input type="hidden" id="category" value="laptop"><br>
-			<div id="question-insert-div"></div>
-	</center>
-</body>
+
+
+
+@extends('default')
+
+@section('content')
+<style>
+	nav{background:#f05f40!important;}
+	#main{min-height: 500px;}
+	center{margin:50px auto 40px;}
+	nav li{display: none;}
+</style>
+<center>
+		<input type="hidden" id="category" value="laptop"><br>
+		<div id="question-insert-div"></div>
+</center>
+@stop
+
+@section('scripts')
 <script type="text/javascript">
 	var base_url = "{{ URL::to('/') }}";
 	$.ajax(
@@ -72,4 +79,4 @@
 		});
 	});
 </script>
-</html>
+@stop

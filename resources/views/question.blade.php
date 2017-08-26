@@ -1,5 +1,9 @@
 <br><br><br><br>
-{{ $question->question }}
-<input type="radio" name="{{ $question->id . '-radio' }}" value="yes"> Yes
+<div class="questionbank">
+<div class="question">{{ $question->question }}</div>
+<input type="radio" name="{{ $question->id . '-radio' }}" value="yes"> Yes &nbsp;
 <input type="radio" name="{{ $question->id . '-radio' }}" value="no"> No
-<button class="submit-option" data-id="{{ $question->id }}">Submit</button>
+<div class="submitans">
+<button class="btn submit-option" data-id="{{ $question->id }}">Submit</button>
+</div>
+</div>

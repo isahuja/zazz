@@ -1,15 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Desktop</title>
-	<script src="js/jquery.min.js"></script>
-</head>
-<body>
-	<center>
+
+@extends('default')
+
+@section('content')
+<style>
+	nav{background:#f05f40!important;}
+	#main{min-height: 500px;}
+	center{margin:50px auto 40px;}
+	nav li{display: none;}
+</style>
+<center>
 			<input type="hidden" id="category" value="desktop"><br>
 			<div id="question-insert-div"></div>
 	</center>
-</body>
+@stop
+
+@section('scripts')
 <script type="text/javascript">
 	var base_url = "{{ URL::to('/') }}";
 	$.ajax(
@@ -41,6 +46,7 @@
 					},
 			success:function(data)
 			{
+				$('.questionbank').css('opacity', '0.5');
 				$('#question-insert-div').append(data);
 			} 
 		});
@@ -72,4 +78,4 @@
 		});
 	});
 </script>
-</html>
+@stop
