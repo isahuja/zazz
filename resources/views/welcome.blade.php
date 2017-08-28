@@ -109,7 +109,7 @@
   });
 
   $('.no').click(function(){
-
+    $('#Query').toggleClass('show');
 
   });
 </script>

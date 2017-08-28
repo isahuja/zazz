@@ -27,5 +27,8 @@
 
 #services.show{display: block;}
 nav{background: #f05f40 !important;}
-#Query.show{display: block;}
+
+
 #Query{display: none;}
+
+#Query.show{display: block;}
