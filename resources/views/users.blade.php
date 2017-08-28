@@ -14,25 +14,24 @@
 </style>
 
 <center>
-<!-- {{ $users }} -->
 
-<table style="width:100%">
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th> 
-    <th>Category</th> 
-    <th>Message</th>
-    <th>ID </th>
-  </tr>
-  <tr>
-    <td>dfgnegleqfgneg</td>
-    <td>wghkwjlr@jdhgfkrw.com</td> 
-    <td>Desktop</td> 
-    <td>dhfjkr wfglw dhfjk rwfglwd hfjkr wfglwdhfjkr wfglw dhfjk rwfglwd hfjkr wfglwdhfjkr wfglw dhfjk rwfglwd hfjkr wfglw</td>
-    <td><a href="" target="_blank"><i class="fa fa-2x fa-cloud-download" aria-hidden="true"></i></a></td>
-  </tr>
-
-</table>
-	
+    <table style="width:100%">
+        <tr>
+            <th>Name</th>
+            <th>Email</th> 
+            <th>Category</th> 
+            <th>Message</th>
+            <th>ID </th>
+        </tr>
+        @foreach($users as $row)
+        <tr>
+            <td>{{ $row->name }}</td>
+            <td>{{ $row->email }}</td> 
+            <td>{{ $row->category }}</td> 
+            <td>{{ $row->query }}</td>
+            <td><a href=""><i class="fa fa-2x fa-cloud-download" aria-hidden="true"></i></a></td>
+        </tr>
+        @endforeach
+    </table>
 </center>
 @stop
