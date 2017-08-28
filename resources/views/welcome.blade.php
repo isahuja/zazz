@@ -106,10 +106,12 @@
 <script>
   $('.yes').click(function(){
     $('#services').toggleClass('show');
+    $('#Query').removeClass('show');
   });
 
   $('.no').click(function(){
     $('#Query').toggleClass('show');
+    $('#services').removeClass('show');
 
   });
 </script>
