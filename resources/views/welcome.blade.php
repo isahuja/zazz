@@ -47,23 +47,27 @@
         <div class="row">
           <div class="col-lg-12 col-md-12 text-center">
             <div class="form-end">
-              <div>
-                <label for="">Name :</label>
-                 <input type="text" id="name"><br><br>
-              </div>
-              <div>
-                <label for="">Email : </label>
-                <input type="text" id="email"><br><br>
-              </div>
-              <div>
-                <label for="">Message:</label>
-                <textarea name="" id="query" cols="30" rows="10"></textarea>
-              </div>
-              <br>
-
-              <button id="register" class="btn">Submit</button>
-
-              </div>
+                <form id='qryform' name='qryform' enctype="multipart/form-data">
+                <div>
+                    <label for="">Name :</label>
+                    <input type="text" id="name" name="name"><br><br>
+                </div>
+                <div>
+                    <label for="">Email : </label>
+                    <input type="text" id="email" name="email"><br><br>
+                </div>
+                <div>
+                    <label for="">Message:</label>
+                    <textarea name="query" id="query" cols="30" rows="10"></textarea>
+                </div>
+                <br>
+                <div>
+                    Upload ID
+                    <input type="file" name='file' id='file'>
+                </div>
+                <button id="register" class="btn">Submit</button>
+                </form>
+            </div>
           </div>
         </div>
       </div>
@@ -104,16 +108,39 @@
 @section('scripts')
 
 <script>
-  $('.yes').click(function(){
-    $('#services').toggleClass('show');
-    $('#Query').removeClass('show');
-  });
+    $('.yes').click(function()
+    {
+        $('#services').toggleClass('show');
+        $('#Query').removeClass('show');
+    });
 
-  $('.no').click(function(){
-    $('#Query').toggleClass('show');
-    $('#services').removeClass('show');
+    $('.no').click(function()
+    {
+        $('#Query').toggleClass('show');
+        $('#services').removeClass('show');
+    });
 
-  });
+    $("form#qryform").submit(function(e)
+    {
+        e.preventDefault();
+        var base_url = "{{ URL::to('/') }}";
+        var formData = new FormData(this);
+        console.log(formData);
+        $.ajax(
+        {
+            url: base_url + '/register',
+            type: 'POST',
+            data: formData,
+            async: false,
+            success: function (data)
+            {
+                alert('Your query has been submitted. We will get back to you soon');
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+    });
 </script>
 
 @stop

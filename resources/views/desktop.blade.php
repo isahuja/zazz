@@ -52,29 +52,23 @@
 		});
 	});
 
-	$('body').on('click','#register',function()
+	$('body').on("submit", "form#qryform", function(e)
 	{
-		var name = $('#name').val();
-		var email = $('#email').val();
-		var contact = $('#contact').val();
-		var query = $('#query').val();
-		var category = $('#category').val();
-
+		e.preventDefault();
+		var formData = new FormData(this);
 		$.ajax(
 		{
-			url  : 	base_url + '/register',
-			type : 	"post",
-			data : 	{
-						'name' : name,
-						'email' : email,
-						'contact' : contact,
-						'query' : query,
-						'category'	: category,
-					},
-			success:function(data)
+			url: base_url + '/register',
+			type: 'POST',
+			data: formData,
+			async: false,
+			success: function (data)
 			{
-				alert('Done');
-			} 
+				alert('Your query has been submitted. We will get back to you soon');
+			},
+			cache: false,
+			contentType: false,
+			processData: false
 		});
 	});
 </script>

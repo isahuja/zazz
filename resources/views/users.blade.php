@@ -19,7 +19,6 @@
         <tr>
             <th>Name</th>
             <th>Email</th> 
-            <th>Category</th> 
             <th>Message</th>
             <th>ID </th>
         </tr>
@@ -27,9 +26,12 @@
         <tr>
             <td>{{ $row->name }}</td>
             <td>{{ $row->email }}</td> 
-            <td>{{ $row->category }}</td> 
             <td>{{ $row->query }}</td>
-            <td><a href=""><i class="fa fa-2x fa-cloud-download" aria-hidden="true"></i></a></td>
+            @if($row->file)
+                <td><a target='_blank' href="{{ URL::to('/id') . '/' . $row->file }}"><i class="fa fa-2x fa-cloud-download" aria-hidden="true"></i></a></td>
+            @else
+                <td><a href="#"><i class="fa fa-2x fa-cloud-download" aria-hidden="true"></i></a></td>
+            @endif
         </tr>
         @endforeach
     </table>

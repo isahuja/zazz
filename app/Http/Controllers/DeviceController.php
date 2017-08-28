@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Input;
 
 use App\Models\Users;
 use App\Models\Question;
+use URL;
 
 class DeviceController extends Controller
 {
@@ -60,13 +61,19 @@ class DeviceController extends Controller
 		$name = Input::get('name');
 		$email = Input::get('email');
 		$query = Input::get('query');
-		$category = Input::get('category');
+		// $category = Input::get('category');
+		$file = Input::file('file');
+		if($file)
+		{
+			$uploadOutput = Input::file('file')->move(public_path() . '/id/',Input::file('file')->getClientOriginalName());
+		}
 
 		$user = new Users;
 		$user->name = $name;
 		$user->email = $email;
 		$user->query = $query;
-		$user->category = $category;
+		$user->category = 'Unknown';
+		$user->file = $file ? $file->getClientOriginalName() : '';
 		$user->save();
 		return;
 	}
