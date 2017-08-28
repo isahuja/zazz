@@ -34,6 +34,41 @@
       </div>
     </section>
 
+    <section id="Query">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Send us your query</h2>
+            <hr class="primary">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 text-center">
+            <div class="form-end">
+              <div>
+                <label for="">Name :</label>
+                 <input type="text" id="name"><br><br>
+              </div>
+              <div>
+                <label for="">Email : </label>
+                <input type="text" id="email"><br><br>
+              </div>
+              <div>
+                <label for="">Message:</label>
+                <textarea name="" id="query" cols="30" rows="10"></textarea>
+              </div>
+              <br>
+
+              <button id="register" class="btn">Submit</button>
+
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="services">
       <div class="container">
         <div class="row">
