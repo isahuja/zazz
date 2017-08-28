@@ -29,7 +29,7 @@
     <td>wghkwjlr@jdhgfkrw.com</td> 
     <td>Desktop</td> 
     <td>dhfjkr wfglw dhfjk rwfglwd hfjkr wfglwdhfjkr wfglw dhfjk rwfglwd hfjkr wfglwdhfjkr wfglw dhfjk rwfglwd hfjkr wfglw</td>
-    <td><a href=""><i class="fa fa-2x fa-cloud-download" aria-hidden="true"></i></a></td>
+    <td><a href="" target="_blank"><i class="fa fa-2x fa-cloud-download" aria-hidden="true"></i></a></td>
   </tr>
 
 </table>

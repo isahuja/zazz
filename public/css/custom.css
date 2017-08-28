@@ -17,3 +17,13 @@
 .form-end textarea{width:50%;border:solid 2px #333;} 
  .form-end input{width:50%; border:solid 2px #333;}
  .form-end button{font-weight:normal; border-radius: 0 !important;}
+
+ .yes, .no{color:#fff;background: #fff;
+    color: #f05f40;    margin: 50px 20px;
+    padding: 10px 50px; cursor:pointer;}
+
+#services{display: none;}
+#about{min-height: 400px;}
+
+#services.show{display: block;}
+nav{background: #f05f40 !important;}

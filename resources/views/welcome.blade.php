@@ -5,7 +5,7 @@
 <!-- Navigation -->
     
 
-    <header class="masthead">
+   <!--  <header class="masthead">
       <div class="header-content">
         <div class="header-content-inner">
           <h1 id="homeHeading">PC Support  that’s there</h1>
@@ -15,15 +15,20 @@
         </div>
       </div>
     </header>
-
+ -->
     <section class="bg-primary" id="about">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading text-white">We've got what you need!</h2>
+            <h2 class="section-heading text-white">Are you able to troubleshoot yourself?</h2>
             <hr class="light">
-            <p class="text-faded">Computer Repair is dedicated to providing the best customer service and computer repair available to you. When your Laptop, PC or Mac needs repairing, you won’t have to worry for long! Our technicians are skilled in dealing with all computers and gadgets whether you need home or business computer repairs.</p>
-            <a class="btn btn-default btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+            <!-- <p class="text-faded">Computer Repair is dedicated to providing the best customer service and computer repair available to you. When your Laptop, PC or Mac needs repairing, you won’t have to worry for long! Our technicians are skilled in dealing with all computers and gadgets whether you need home or business computer repairs.</p>
+            <a class="btn btn-default btn-xl js-scroll-trigger" href="#services">Get Started!</a> -->
+
+            <div>
+              <span class="yes btn">Yes</span>
+              <span class="no btn"> No</span>
+            </div>
           </div>
         </div>
       </div>
@@ -59,4 +64,19 @@
       </div>
     </section>
  
+@stop
+
+@section('scripts')
+
+<script>
+  $('.yes').click(function(){
+    $('#services').toggleClass('show');
+  });
+
+  $('.no').click(function(){
+
+
+  });
+</script>
+
 @stop
