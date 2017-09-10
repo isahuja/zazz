@@ -2,12 +2,12 @@
 	<br><br>
 	Query Form
 	<form id='qryform' name='qryform' enctype="multipart/form-data">
-		<div>
+		<div class="name-box">
 			<label for="">Name :</label>
 			<input type="text" id="name" name="name"><br>
 			<div class="errorbox">Name cannot contain numbers</div><br>
 		</div>
-		<div>
+		<div class="email-box">
 			<label for="">Email : </label>
 			<input type="text" id="email" name="email"><br>
 			<div class="errorbox">Email should be in 'abc@domian.com' format</div><br>
