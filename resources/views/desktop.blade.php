@@ -7,6 +7,7 @@
 	#main{min-height: 500px;}
 	center{margin:50px auto 40px;}
 	nav li{display: none;}
+	.errorbox{display: none; color:red;}
 </style>
 <center>
 			<input type="hidden" id="category" value="desktop"><br>
