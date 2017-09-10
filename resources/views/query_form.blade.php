@@ -4,11 +4,13 @@
 	<form id='qryform' name='qryform' enctype="multipart/form-data">
 		<div>
 			<label for="">Name :</label>
-			<input type="text" id="name" name="name"><br><br>
+			<input type="text" id="name" name="name"><br>
+			<div class="errorbox">Name cannot contain numbers</div><br>
 		</div>
 		<div>
 			<label for="">Email : </label>
-			<input type="text" id="email" name="email"><br><br>
+			<input type="text" id="email" name="email"><br>
+			<div class="errorbox">Email should be in 'abc@domian.com' format</div><br>
 		</div>
 		<div>
 			<label for="">Message:</label>

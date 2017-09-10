@@ -52,24 +52,58 @@
 		});
 	});
 
+	function validateEmail(email) {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+  }
+
+  function validateName(name) {
+      var re = /^([^0-9]*)$/;
+      return re.test(name);
+  }
+
 	$('body').on("submit", "form#qryform", function(e)
 	{
-		e.preventDefault();
-		var formData = new FormData(this);
-		$.ajax(
-		{
-			url: base_url + '/register',
-			type: 'POST',
-			data: formData,
-			async: false,
-			success: function (data)
+
+		var email = validateEmail($('#qryform #email').val()),
+          name = validateName($('#qryform #name').val());
+
+		if(email ==  true && name == true){
+
+			 $('.name-box .errorbox').hide();
+           $('.email-box .errorbox').hide();
+
+			e.preventDefault();
+			var formData = new FormData(this);
+			$.ajax(
 			{
-				alert('Your query has been submitted. We will get back to you soon');
-			},
-			cache: false,
-			contentType: false,
-			processData: false
-		});
+				url: base_url + '/register',
+				type: 'POST',
+				data: formData,
+				async: false,
+				success: function (data)
+				{
+					alert('Your query has been submitted. We will get back to you soon');
+				},
+				cache: false,
+				contentType: false,
+				processData: false
+			});
+		} else {
+			e.preventDefault();
+
+
+			 if(email == true && name == false){
+            $('.name-box .errorbox').show();
+	        } else if(email == false && name == true){
+	           $('.email-box .errorbox').show();
+	        } else{
+	          $('.name-box .errorbox').show();
+	           $('.email-box .errorbox').show();
+
+	        }
+		}
+		
 	});
 </script>
 @stop

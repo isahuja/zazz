@@ -16,11 +16,14 @@
       </div>
     </header>
  -->
+ <style>
+.errorbox{display: none; color:red;}
+ </style>
     <section class="bg-primary" id="about">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading text-white">Are you able to troubleshoot yourself?</h2>
+            <h2 class="section-heading text-white">Do you want to troubleshoot yourself</h2>
             <hr class="light">
             <!-- <p class="text-faded">Computer Repair is dedicated to providing the best customer service and computer repair available to you. When your Laptop, PC or Mac needs repairing, you won’t have to worry for long! Our technicians are skilled in dealing with all computers and gadgets whether you need home or business computer repairs.</p>
             <a class="btn btn-default btn-xl js-scroll-trigger" href="#services">Get Started!</a> -->
@@ -48,13 +51,15 @@
           <div class="col-lg-12 col-md-12 text-center">
             <div class="form-end">
                 <form id='qryform' name='qryform' enctype="multipart/form-data">
-                <div>
+                <div class="name-box">
                     <label for="">Name :</label>
-                    <input type="text" id="name" name="name"><br><br>
+                    <input type="text" id="name" name="name" required><br>
+                    <div class="errorbox">Name cannot contain numbers</div><br>
                 </div>
-                <div>
+                <div class="email-box">
                     <label for="">Email : </label>
-                    <input type="text" id="email" name="email"><br><br>
+                    <input type="text" id="email" name="email" required><br>
+                     <div class="errorbox">Email should be in 'abc@domian.com' format</div><br>
                 </div>
                 <div>
                     <label for="">Message:</label>
@@ -102,6 +107,7 @@
         </div>
       </div>
     </section>
+}
  
 @stop
 
@@ -120,8 +126,28 @@
         $('#services').removeClass('show');
     });
 
+    function validateEmail(email) {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+  }
+
+  function validateName(name) {
+      var re = /^([^0-9]*)$/;
+      return re.test(name);
+  }
+
+
     $("form#qryform").submit(function(e)
     {
+
+      var email = validateEmail($('#qryform #email').val()),
+          name = validateName($('#qryform #name').val());
+
+      if(email ==  true && name == true){
+
+        $('.name-box .errorbox').hide();
+           $('.email-box .errorbox').hide();
+           
         e.preventDefault();
         var base_url = "{{ URL::to('/') }}";
         var formData = new FormData(this);
@@ -140,6 +166,21 @@
             contentType: false,
             processData: false
         });
+
+      } else {
+        e.preventDefault();
+
+        if(email == true && name == false){
+            $('.name-box .errorbox').show();
+        } else if(email == false && name == true){
+           $('.email-box .errorbox').show();
+        } else{
+          $('.name-box .errorbox').show();
+           $('.email-box .errorbox').show();
+
+        }
+
+      }
     });
 </script>
 
